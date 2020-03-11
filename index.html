@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .all {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            min-width: 1280px;
+
+        }
+
+        .menu {
+            width: 200px;
+            height: 100%;
+            background-color: darkgray;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+
+        .mobile_btn {
+            width: 60px;
+            height: 70px;
+            background-color: lightblue;
+            display: none;
+        }
+
+        .logo {
+
+            width: 100px;
+            height: 100px;
+            background-image: url(jpg/fish_logo.jpg);
+            background-size: cover;
+            margin: 50px;
+        }
+
+        .ul {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        li {
+            width: 100%;
+            background-color: burlywood;
+            color: yellow;
+            border: dotted 2px blue;
+        }
+
+        .container {
+            width: calc(100% - 200px);
+            height: 100%;
+            background-color: dimgray;
+            display: flex;
+            align-items: center;
+        }
+
+        .pic_area {
+            width: 1080px;
+            height: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 要讓下面width的總和=100%，才可以切到邊 */
+        #picA {
+            background-image: url(jpg/picA.jpg);
+            width: 33%;
+            height: 100%;
+        }
+
+        #picB {
+            background-image: url(jpg/picB.jpg);
+            width: 34%;
+            height: 100%;
+            margin: 0 10px;
+        }
+
+        #picC {
+            background-image: url(jpg/picC.jpg);
+            width: 33%;
+            height: 100%;
+        }
+
+        .box {
+            background-size: cover;
+            background-position: top;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+        }
+
+        .mask:hover {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: 1.5s;
+        }
+
+        .mask:active {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        @media(max-width: 1279px) {
+            .all {
+                min-width: 768px;
+            }
+
+            .mobile_btn {
+                width: 60px;
+                height: 70px;
+                background-color: lightblue;
+                display: none;
+            }
+
+            .pic_area {
+                width: 568px;
+                height: 80%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #picA {
+                width: 100%;
+                height: calc(50% - 5px);
+                margin: 0 0 10px 0;
+            }
+
+            #picB {
+                width: calc(50% - 5px);
+                height: calc(50% - 5px);
+                margin: 0 10px 0 0;
+            }
+
+            #picC {
+                width: calc(50% - 5px);
+                height: calc(50% - 5px);
+            }
+        }
+
+        @media(max-width: 767px) {
+            .all {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-wrap: wrap;
+                min-width: 568px;
+            }
+
+            .menu {
+                width: 100%;
+                height: 200px;
+                background-color: darkgray;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .mobile_btn {
+                width: 60px;
+                height: 70px;
+                background-color: lightblue;
+                display: none;
+                transition: 0.5s;
+            }
+
+            .mobile_btn:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+
+            }
+
+            .mobile_btn:hover~.ul {
+                /* display: block; */
+                left: 0;
+            }
+
+            .ul:hover {
+                /* display: block; */
+                left: 0;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+                background-image: url(jpg/fish_logo.jpg);
+                background-size: cover;
+            }
+
+            .ul {
+                width: unset;
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                transition: 1s;
+            }
+
+            li {
+                width: 100%;
+                font-size: 30px;
+                background-color: burlywood;
+                color: yellow;
+                border: dotted 2px blue;
+            }
+
+            .container {
+                width: 100%;
+                height: calc(100% - 200px);
+                background-color: dimgray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .pic_area {
+                width: 568px;
+                height: 80%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #picA {
+                background-image: url(jpg/picA.jpg);
+                width: 100%;
+                height: calc(50% - 5px);
+                margin: 0 0 10px 0;
+            }
+
+            #picB {
+                background-image: url(jpg/picB.jpg);
+                width: calc(50% - 5px);
+                height: calc(50% - 5px);
+                margin: 0 10px 0 0;
+            }
+
+            #picC {
+                background-image: url(jpg/picC.jpg);
+                width: calc(50% - 5px);
+                height: calc(50% - 5px);
+            }
+        }
+
+        @media(max-width:567px) {
+            .menu {
+                position: relative;
+            }
+
+            .mobile_btn {
+                /* display: none; */
+                transition: 0.5s;
+                display: block;
+            }
+
+            /* .logo{                    
+ 
+                    top:50px ;
+                    left:calc(50% - 50px) ; 
+                    position: absolute;
+                } */
+            .logo {
+                top: 0px;
+                left: calc(50% - 130px);
+                position: absolute;
+            }
+
+            .ul {
+                width: 110px;
+                flex-direction: column;
+                /* display: none; */
+                top: 200px;
+                left: -200px;
+                position: absolute;
+                /* 釘在menu */
+                transition: 1s;
+                /* 原先用display:none及display:none的原因是因為東西還沒隱藏，先在藉由position釘住並將位置設定成負數，東西就會置於畫面外，屆時就不用開關，只要利用hover，，將位置由負數改為0或正數，並設定transition秒數，就能產生類似滑動的效果 */
+
+            }
+
+            .pic_area {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #picA {
+                height: 50%;
+                margin: unset;
+            }
+
+            #picB {
+                width: 100%;
+                height: 50%;
+                margin: unset;
+            }
+
+            #picC {
+                width: 100%;
+                height: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="menu">
+            <div class="mobile_btn"></div>
+            <div class="logo"></div>
+            <div class="ul">
+                <li>google</li>
+                <li>yahoo</li>
+                <li>youtube</li>
+            </div>
+        </div>
+        <div class="container">
+            <div class="pic_area">
+                <div id="picA" class="box">
+                    <div class="mask"> </div>
+                </div>
+                <div id="picB" class="box">
+                    <div class="mask"></div>
+                </div>
+                <div id="picC" class="box">
+                    <div class="mask"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
